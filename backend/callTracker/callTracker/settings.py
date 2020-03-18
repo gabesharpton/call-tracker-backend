@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'c9*1&+3c0#wza+_=&ny%*zf)uwjc57mqj9*)f!0!aou$z5=dc#'
+SECRET_KEY = '5papn90asga88ub)p!hqra_$0tixtda-bc^($3s607nz7#n6p0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'callTracker',
 ]
 
 MIDDLEWARE = [
@@ -74,13 +73,12 @@ WSGI_APPLICATION = 'callTracker.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = { 
-    'default': 
-    {   'ENGINE': 'django.db.backends.postgresql', 
-        'NAME': 'callTracker',
-        'USER': 'misha', 
-        'PASSWORD': '56tygh', 
-        'HOST': 'localhost' } }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 
 # Password validation
