@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'callTracker',
 ]
 
 MIDDLEWARE = [
@@ -73,12 +74,13 @@ WSGI_APPLICATION = 'callTracker.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+DATABASES = { 
+    'default': 
+    {   'ENGINE': 'django.db.backends.postgresql', 
+        'NAME': 'callTracker',
+        'USER': 'misha', 
+        'PASSWORD': '56tygh', 
+        'HOST': 'localhost' } }
 
 
 # Password validation
