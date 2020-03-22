@@ -18,8 +18,5 @@ def vote(request, question_id):
 
 def index(request):
     question_list = Question.objects.all()
-    template = loader.get_template('Call-survey.html')
-    context = {
-        'question_list': question_list,
-    }
-    return HttpResponse(template.render(context, request))
+    context = {'question_list': question_list,}
+    return render(context, 'Call-survey.html',request)
