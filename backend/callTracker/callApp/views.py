@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.template import loader
+# from django.template import loader
 
 from .models import Question
 # Create your views here.
@@ -19,4 +19,4 @@ def vote(request, question_id):
 def index(request):
     question_list = Question.objects.all()
     context = {'question_list': question_list,}
-    return render(context, 'Call-survey.html',request)
+    return render(request, 'Call-survey.html',context)
